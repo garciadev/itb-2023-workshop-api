@@ -1,0 +1,10 @@
+# Recommended CommandBox system modules
+install commandbox-bullet-train,commandbox-cfconfig,commandbox-cfformat,commandbox-update-check,commandbox-fusionreactor,cfdocs,commandbox-githooks,commandbox-migrations,quick-commands,commandbox-cflint,commandbox-bookmarks,commandbox-dotenv,coldbox-cli,testbox-cli
+
+# Recommended CommandBox shortcuts
+config set command.aliases.git="!git"
+config set command.aliases.gulp="!gulp"
+config set command.aliases.npm="!npm"
+config set command.aliases.nano="!nano"
+
+reload
