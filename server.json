@@ -1,0 +1,8 @@
+{
+    "name":"api",
+    "web":{
+        "rewrites":{
+            "enable":true
+        }
+    }
+}
