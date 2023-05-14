@@ -1,9 +1,9 @@
 {
-    "name":"api",
+    "name":"MyAPI",
     "version":"1.0.0",
     "location":"",
     "author":"You",
-    "slug":"api",
+    "slug":"myapi",
     "createPackageDirectory":false,
     "type":"mvc",
     "homepage":"https://github.com/coldbox-templates/rest-hmvc",
@@ -34,7 +34,8 @@
         "cbvalidation":"modules/cbvalidation/",
         "cbsecurity":"modules/cbsecurity/",
         "cbdebugger":"modules/cbdebugger/",
-        "cbSwaggerUI":"modules/cbSwaggerUI/"
+        "cbSwaggerUI":"modules/cbSwaggerUI/",
+        "sqlformatter":"modules/sqlformatter/"
     },
     "dependencies":{
         "coldbox":"^6.0.0",
@@ -43,7 +44,8 @@
         "cbvalidation":"^4.1.0",
         "cbdebugger":"^4.1.0-snapshot",
         "cbSwagger":"^2.7.0+169",
-        "cbSwaggerUI":"^1.2.0"
+        "cbSwaggerUI":"^1.2.0",
+        "sqlformatter":"^1.1.3+31"
     },
     "scripts":{
         "postInstall":"pathExists .env || cp .env.example .env && package set ignore=[]",

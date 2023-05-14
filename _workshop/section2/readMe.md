@@ -6,7 +6,7 @@ We will use the app wizard in CommandBox to create a new API site using the Modu
 coldbox create app-wizard
 ```
 
-1. Enter the name: API
+1. Enter the name: MyAPI
 2. Are you currently inside the folder: y
 3. Are you creating an API: y
 4. Which template to use: Modular (API/REST)
@@ -16,7 +16,7 @@ This will generate an HMVC API, install dependencies, and stub out the files.
 We will also install additional modules to use later:
 
 ```bash
-install cbDebugger,cbSwagger,cbSwaggerUI
+install cbDebugger,cbSwagger,cbSwaggerUI,sqlformatter
 ```
 
 ## Environment Variables
@@ -32,6 +32,9 @@ BOX_SERVER_WEB_SSL_ENABLE=true
 BOX_SERVER_WEB_SSL_PORT=8001
 BOX_SERVER_WEB_ACCESSLOGENABLE=true
 ```
+
+> If you want others to use similar settings, you can add that to the `.env.example` file so that others can use it as a guide for their environments.
+
 You should also specify a JWT Secret to use when generating tokens. Specifying a value here will allow tokens to be validated after server restarts if using external storage like a database.
 
 An easy token generator is to use CommandBox to generate an UUID.

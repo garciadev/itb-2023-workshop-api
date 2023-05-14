@@ -1,5 +1,5 @@
 {
-    "name":"api",
+    "name":"MyAPI",
     "web":{
         "rewrites":{
             "enable":true
