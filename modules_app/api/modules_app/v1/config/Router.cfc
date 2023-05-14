@@ -12,6 +12,9 @@ component {
 		// API Secured Routes
 		get( "/whoami", "Echo.whoami" );
 
+		// My routes
+		get( "/first", "Echo.first" );
+		get( "/second", "Echo.second" );
 
 		route( "/:handler/:action" ).end();
 	}

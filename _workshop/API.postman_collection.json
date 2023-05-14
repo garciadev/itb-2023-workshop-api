@@ -1,0 +1,397 @@
+{
+	"info": {
+		"_postman_id": "d83a65cc-bb29-4b37-adc2-ac50d072e04d",
+		"name": "API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16869792",
+		"_collection_link": "https://orange-eclipse-347208.postman.co/workspace/Into-The-Box-2023~070d1093-c12f-4706-b014-c7dbed6563c9/collection/16869792-d83a65cc-bb29-4b37-adc2-ac50d072e04d?action=share&creator=16869792&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "Auth",
+							"item": [
+								{
+									"name": "Login",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"if( pm.response.json().data ){\r",
+													"    pm.environment.set(\"API_Token\", pm.response.json().data);\r",
+													"}\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "admin@coldbox.org",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "admin",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@test.test",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "password",
+													"value": "test",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "{{API_Server}}/api/v1/login",
+											"host": [
+												"{{API_Server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"login"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Logout",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-auth-token",
+												"value": "{{API_Token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{API_Server}}/api/v1/logout",
+											"host": [
+												"{{API_Server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"logout"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Register",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"if( pm.response.json().data.token ){\r",
+													"    pm.environment.set(\"API_Token\", pm.response.json().data.token);\r",
+													"}\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \tfName    : \"test\",\r\n\t\tlName    : \"test\",\r\n\t\temail    : \"test@test.test\",\r\n\t\tpassword : \"test\"\r\n}"
+										},
+										"url": {
+											"raw": "{{API_Server}}/api/v1/register",
+											"host": [
+												"{{API_Server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"register"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Echo",
+							"item": [
+								{
+									"name": "Index",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_Server}}/",
+											"host": [
+												"{{API_Server}}"
+											],
+											"path": [
+												""
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "200 OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{API_Server}}/",
+													"host": [
+														"{{API_Server}}"
+													],
+													"path": [
+														""
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "x-current-route",
+													"value": ""
+												},
+												{
+													"key": "x-current-event",
+													"value": "v1:Echo.index"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "1; block"
+												},
+												{
+													"key": "x-current-routed-url",
+													"value": ""
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "same-origin"
+												},
+												{
+													"key": "Date",
+													"value": "Sun, 14 May 2023 19:37:49 GMT"
+												},
+												{
+													"key": "x-response-time",
+													"value": "1"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "x-current-routed-namespace",
+													"value": ""
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age: 31536000;"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json;charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "156"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": \"Welcome to my ColdBox RESTFul Service\",\n    \"error\": false,\n    \"pagination\": {\n        \"totalPages\": 1,\n        \"maxRows\": 0,\n        \"offset\": 0,\n        \"page\": 1,\n        \"totalRecords\": 0\n    },\n    \"messages\": []\n}"
+										}
+									]
+								},
+								{
+									"name": "WhoAmI",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-auth-token",
+												"value": "{{API_Token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{API_Server}}/api/v1/whoami",
+											"host": [
+												"{{API_Server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"whoami"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "First",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{API_Server}}/api/v1/first",
+											"host": [
+												"{{API_Server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"first"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Second",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-auth-token",
+												"value": "{{API_Token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{API_Server}}/api/v1/second",
+											"host": [
+												"{{API_Server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"second"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

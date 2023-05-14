@@ -24,7 +24,6 @@ component extends="coldbox.system.RestHandler" {
 		event.getResponse().setData( "Welcome to my ColdBox RESTFul Service" );
 	}
 
-
 	/**
 	 * A secured route that shows you your information
 	 *
@@ -35,6 +34,41 @@ component extends="coldbox.system.RestHandler" {
 	 */
 	function whoami( event, rc, prc ) secured{
 		event.getResponse().setData( jwtAuth().getUser().getMemento() );
+	}
+
+	/**
+	 * My unsecured route
+	 *
+	 * @route    (GET) /api/v1/first
+	 * @response -default ~api/v1/echo/first/responses.json##200
+	 * @response -401 ~api/v1/echo/first/responses.json##401
+	 */
+	function first( event, rc, prc ) {
+		var test = {
+			"a" : 1,
+			"b" : 2,
+			"c" : 3
+		};
+
+		event.getResponse().setData( test );
+	}
+
+	/**
+	 * My secured route
+	 *
+	 * @route    (GET) /api/v1/second
+	 * @security bearerAuth,ApiKeyAuth
+	 * @response -default ~api/v1/echo/second/responses.json##200
+	 * @response -401 ~api/v1/echo/second/responses.json##401
+	 */
+	function second( event, rc, prc ) secured{
+		var test = {
+			"d" : 4,
+			"e" : 5,
+			"f" : 6
+		};
+
+		event.getResponse().setData( test );
 	}
 
 }

@@ -23,6 +23,87 @@ post( "/register", "Auth.register" );
 get( "/whoami", "Echo.whoami" );
 ```
 
-Create a new handler and 
+## Postman
+
+Postman is a handy tool for testing API calls. Import the Postman collection in the `_workshop` directory and try testing the APIs.
+
+After importing the collection, create a Local environment with the following two variables
+
+* API_Server
+* API_Token
+
+For API_Server, set the initial and current value to the URL of your API. For example, `https://127.0.0.1:8001`
+
+The API_Token value will get populated when we authenticate.
+
+> Be sure to save the environment
+
+Go to the collection and select your new Local environment in the top right corner.
+
+Click through the API calls and confirm the results.
+
+
+## Creating Routes
+
+Add two new routes and functions to test.
+
+Edit Echo.cfc and add
+
+```bash
+/**
+ * My unsecured route
+ *
+ * @route    (GET) /api/v1/first
+ * @response -default ~api/v1/echo/first/responses.json##200
+ * @response -401 ~api/v1/echo/first/responses.json##401
+ */
+function first( event, rc, prc ) {
+	var test = {
+		"a" : 1,
+		"b" : 2,
+		"c" : 3
+	};
+
+	event.getResponse().setData( test );
+}
+
+/**
+ * My secured route
+ *
+ * @route    (GET) /api/v1/second
+ * @security bearerAuth,ApiKeyAuth
+ * @response -default ~api/v1/echo/second/responses.json##200
+ * @response -401 ~api/v1/echo/second/responses.json##401
+ */
+function second( event, rc, prc ) secured{
+	var test = {
+		"d" : 4,
+		"e" : 5,
+		"f" : 6
+	};
+
+	event.getResponse().setData( test );
+}
+```
+
+Next, add the new routes to `Router.cfc`:
+
+```bash
+// My routes
+get( "/first", "Echo.first" );
+get( "/second", "Echo.second" );
+```
+
+Reinitialize or restart the site since the routes were changed.
+
+`fwreinit` or `restart`
+
+You can try accessing the new routes in a browser:
+
+https://127.0.0.1:8001/api/v1/first
+https://127.0.0.1:8001/api/v1/second
+
+Or use Postman to test them.
+
 
 [Back](../readMe.md)
