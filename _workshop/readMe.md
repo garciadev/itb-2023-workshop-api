@@ -7,8 +7,9 @@ The content is divided into the following sections.
 1. [CommandBox](section1/readMe.md)
 2. [Creating the REST API](section2/readMe.md)
 3. [Routes and Handlers](section3/readMe.md)
-4. [Models](section4/readMe.md)
-5. [Database](section5/readMe.md)
-6. [Testing](section6/readMe.md)
-7. [Documentation](section7/readMe.md)
+4. [Testing](section4/readMe.md)
+5. [Documentation](section5/readMe.md)
+6. [Database](section6/readMe.md)
+7. [Models](section7/readMe.md)
+
 
