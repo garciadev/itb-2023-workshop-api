@@ -47,7 +47,7 @@ component extends="coldbox.system.RestHandler" {
 	 * @security         ApiKeyAuth
 	 * @response-default ~api/v1/echo/first/responses.json##200
 	 */
-	function first( event, rc, prc ) {
+	function first( event, rc, prc ){
 		var test = [ "a", "b", "c" ];
 		event.getResponse().setData( test );
 	}
