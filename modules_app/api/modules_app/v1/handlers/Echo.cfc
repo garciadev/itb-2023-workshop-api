@@ -27,21 +27,25 @@ component extends="coldbox.system.RestHandler" {
 	/**
 	 * A secured route that shows you your information
 	 *
-	 * @route    (GET) /api/v1/whoami
-	 * @security bearerAuth,ApiKeyAuth
-	 * @response -default ~api/v1/echo/whoami/responses.json##200
-	 * @response -401 ~api/v1/echo/whoami/responses.json##401
+	 * @x-route          (GET) /api/v1/whoami
+	 * @operationId      /api/v1/echo/whoami
+	 * @tags             api/v1
+	 * @security         bearerAuth,ApiKeyAuth
+	 * @response-default ~api/v1/echo/whoami/responses.json##200
+	 * @response-401     ~api/v1/echo/whoami/responses.json##401
 	 */
 	function whoami( event, rc, prc ) secured{
 		event.getResponse().setData( jwtAuth().getUser().getMemento() );
 	}
 
 	/**
-	 * My unsecured route
+	 * A unsecured route that shows you your information
 	 *
-	 * @route    (GET) /api/v1/first
-	 * @response -default ~api/v1/echo/first/responses.json##200
-	 * @response -401 ~api/v1/echo/first/responses.json##401
+	 * @x-route          (GET) /api/v1/first
+	 * @operationId      /api/v1/echo/first
+	 * @tags             api/v1
+	 * @security         ApiKeyAuth
+	 * @response-default ~api/v1/echo/first/responses.json##200
 	 */
 	function first( event, rc, prc ) {
 		var test = [ "a", "b", "c" ];
@@ -51,10 +55,12 @@ component extends="coldbox.system.RestHandler" {
 	/**
 	 * My secured route
 	 *
-	 * @route    (GET) /api/v1/second
-	 * @security bearerAuth,ApiKeyAuth
-	 * @response -default ~api/v1/echo/second/responses.json##200
-	 * @response -401 ~api/v1/echo/second/responses.json##401
+	 * @x-route          (GET) /api/v1/second
+	 * @operationId      /api/v1/echo/second
+	 * @tags             api/v1
+	 * @security         bearerAuth,ApiKeyAuth
+	 * @response-default ~api/v1/echo/second/responses.json##200
+	 * @response-401     ~api/v1/echo/second/responses.json##401
 	 */
 	function second( event, rc, prc ) secured{
 		var test = [ "d", "e", "f" ];

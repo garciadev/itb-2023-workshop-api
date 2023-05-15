@@ -50,40 +50,31 @@ Add two new routes and functions to test.
 Edit Echo.cfc and add
 
 ```bash
-/**
- * My unsecured route
- *
- * @route    (GET) /api/v1/first
- * @response -default ~api/v1/echo/first/responses.json##200
- * @response -401 ~api/v1/echo/first/responses.json##401
- */
-function first( event, rc, prc ) {
-	var test = {
-		"a" : 1,
-		"b" : 2,
-		"c" : 3
-	};
+	/**
+	 * A unsecured route that shows you your information
+	 *
+	 * @x-route          (GET) /api/v1/first
+	 * @operationId      /api/v1/echo/first
+	 * @tags             api/v1
+	 * @security         ApiKeyAuth
+	 */
+	function first( event, rc, prc ) {
+		var test = [ "a", "b", "c" ];
+		event.getResponse().setData( test );
+	}
 
-	event.getResponse().setData( test );
-}
-
-/**
- * My secured route
- *
- * @route    (GET) /api/v1/second
- * @security bearerAuth,ApiKeyAuth
- * @response -default ~api/v1/echo/second/responses.json##200
- * @response -401 ~api/v1/echo/second/responses.json##401
- */
-function second( event, rc, prc ) secured{
-	var test = {
-		"d" : 4,
-		"e" : 5,
-		"f" : 6
-	};
-
-	event.getResponse().setData( test );
-}
+	/**
+	 * My secured route
+	 *
+	 * @x-route          (GET) /api/v1/second
+	 * @operationId      /api/v1/echo/second
+	 * @tags             api/v1
+	 * @security         bearerAuth,ApiKeyAuth
+	 */
+	function second( event, rc, prc ) secured{
+		var test = [ "d", "e", "f" ];
+		event.getResponse().setData( test );
+	}
 ```
 
 Next, add the new routes to `Router.cfc`:
