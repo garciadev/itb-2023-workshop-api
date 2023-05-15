@@ -16,7 +16,7 @@ This will generate an HMVC API, install dependencies, and stub out the files.
 We will also install additional modules to use later:
 
 ```bash
-install cbDebugger,cbSwagger,cbSwaggerUI,sqlformatter
+install cbDebugger,cbSwagger,cbSwaggerUI,sqlformatter,cfmigrations,qb
 ```
 
 ## Environment Variables
