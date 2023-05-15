@@ -44,12 +44,7 @@ component extends="coldbox.system.RestHandler" {
 	 * @response -401 ~api/v1/echo/first/responses.json##401
 	 */
 	function first( event, rc, prc ) {
-		var test = {
-			"a" : 1,
-			"b" : 2,
-			"c" : 3
-		};
-
+		var test = [ "a", "b", "c" ];
 		event.getResponse().setData( test );
 	}
 
@@ -62,12 +57,7 @@ component extends="coldbox.system.RestHandler" {
 	 * @response -401 ~api/v1/echo/second/responses.json##401
 	 */
 	function second( event, rc, prc ) secured{
-		var test = {
-			"d" : 4,
-			"e" : 5,
-			"f" : 6
-		};
-
+		var test = [ "d", "e", "f" ];
 		event.getResponse().setData( test );
 	}
 
