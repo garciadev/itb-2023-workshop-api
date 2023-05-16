@@ -15,6 +15,7 @@ component {
 		// My routes
 		get( "/first", "Echo.first" );
 		get( "/second", "Echo.second" );
+		get( "/third", "Echo.third" );
 
 		route( "/:handler/:action" ).end();
 	}

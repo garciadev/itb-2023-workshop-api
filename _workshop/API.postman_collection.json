@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "d83a65cc-bb29-4b37-adc2-ac50d072e04d",
+		"_postman_id": "",
 		"name": "API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "16869792",
-		"_collection_link": "https://orange-eclipse-347208.postman.co/workspace/Into-The-Box-2023~070d1093-c12f-4706-b014-c7dbed6563c9/collection/16869792-d83a65cc-bb29-4b37-adc2-ac50d072e04d?action=share&creator=16869792&source=collection_link"
+		"_exporter_id": "",
+		"_collection_link": ""
 	},
 	"item": [
 		{
@@ -382,6 +382,58 @@
 												"api",
 												"v1",
 												"second"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Third",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{API_Server}}/api/v1/third?x=1&y=1",
+											"host": [
+												"{{API_Server}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"third"
+											],
+											"query": [
+												{
+													"key": "x",
+													"value": "1"
+												},
+												{
+													"key": "y",
+													"value": "1"
+												},
+												{
+													"key": "fwreinit",
+													"value": "1",
+													"disabled": true
+												}
 											]
 										}
 									},

@@ -3,7 +3,7 @@
  */
 component extends="coldbox.system.RestHandler" {
 
-	//property name="myService" inject="MyService";
+	property name="myService" inject="MyService";
 
 	// OPTIONAL HANDLER PROPERTIES
 	this.prehandler_only      = "";
@@ -50,9 +50,9 @@ component extends="coldbox.system.RestHandler" {
 	 * @response-default ~api/v1/echo/first/responses.json##200
 	 */
 	function first( event, rc, prc ){
-		var test = [ "a", "b", "c" ];
-		// var test = myService.getFirstData();
-		event.getResponse().setData( test );
+		var result = [ "a", "b", "c" ];
+		// var result = myService.first();
+		event.getResponse().setData( result );
 	}
 
 	/**
@@ -66,9 +66,27 @@ component extends="coldbox.system.RestHandler" {
 	 * @response-401     ~api/v1/echo/second/responses.json##401
 	 */
 	function second( event, rc, prc ) secured{
-		var test = [ "d", "e", "f" ];
-		// var test = myService.getSecondData();
-		event.getResponse().setData( test );
+		var result = [ "d", "e", "f" ];
+		// var result = myService.second();
+		event.getResponse().setData( result );
+	}
+
+	function third( event, rc, prc ){
+		var validationResult = validateOrFail(
+			target      = rc,
+			constraints = {
+				"x" : { "required" : true },
+				"y" : {
+					"required" : true,
+					"type"     : "numeric",
+					"min"      : 1,
+					"max"      : 10
+				}
+			}
+		);
+
+		var result = myService.third( argumentCollection = validationResult );
+		event.getResponse().setData( result );
 	}
 
 }

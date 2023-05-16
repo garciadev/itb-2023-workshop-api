@@ -33,8 +33,8 @@ First, we will add the response section to the handler functions. When done, you
  * @response-default ~api/v1/echo/first/responses.json##200
  */
 function first( event, rc, prc ) {
-	var test = [ "a", "b", "c" ];
-	event.getResponse().setData( test );
+	var result = [ "a", "b", "c" ];
+	event.getResponse().setData( result );
 }
 
 /**
@@ -48,8 +48,8 @@ function first( event, rc, prc ) {
  * @response-401     ~api/v1/echo/second/responses.json##401
  */
 function second( event, rc, prc ) secured{
-	var test = [ "d", "e", "f" ];
-	event.getResponse().setData( test );
+	var result = [ "d", "e", "f" ];
+	event.getResponse().setData( result );
 }
 ```
 > Note: We added the @response lines to each function

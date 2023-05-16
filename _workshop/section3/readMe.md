@@ -59,8 +59,8 @@ Edit Echo.cfc and add
 	 * @security         ApiKeyAuth
 	 */
 	function first( event, rc, prc ) {
-		var test = [ "a", "b", "c" ];
-		event.getResponse().setData( test );
+		var result = [ "a", "b", "c" ];
+		event.getResponse().setData( result );
 	}
 
 	/**
@@ -72,8 +72,8 @@ Edit Echo.cfc and add
 	 * @security         bearerAuth,ApiKeyAuth
 	 */
 	function second( event, rc, prc ) secured{
-		var test = [ "d", "e", "f" ];
-		event.getResponse().setData( test );
+		var result = [ "d", "e", "f" ];
+		event.getResponse().setData( result );
 	}
 ```
 

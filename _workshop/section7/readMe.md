@@ -51,9 +51,9 @@ Finally, update the two new API functions to call the new model.
 	 * @response-default ~api/v1/echo/first/responses.json##200
 	 */
 	function first( event, rc, prc ){
-		//var test = [ "a", "b", "c" ];
-		var test = myService.getFirstData();
-		event.getResponse().setData( test );
+		//var result = [ "a", "b", "c" ];
+		var result = myService.getFirstData();
+		event.getResponse().setData( result );
 	}
 
 	/**
@@ -67,9 +67,9 @@ Finally, update the two new API functions to call the new model.
 	 * @response-401     ~api/v1/echo/second/responses.json##401
 	 */
 	function second( event, rc, prc ) secured{
-		//var test = [ "d", "e", "f" ];
-		var test = myService.getSecondData();
-		event.getResponse().setData( test );
+		//var result = [ "d", "e", "f" ];
+		var result = myService.getSecondData();
+		event.getResponse().setData( result );
 	}
 ```
 
