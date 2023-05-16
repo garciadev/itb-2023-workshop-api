@@ -1,6 +1,6 @@
 # Building a REST API for the Modern Developer
 
-This workshop will walk us through creating a ColdBox REST API using the Ortus tools. We will use CommandBox to configure and host the API site using environment variables and cfconfig, the ColdBox RESTFul handler to return a standard payload, JWT authentication using cbSecurity to secure our calls, cbValidation to validate our incoming data, Swagger annotations to document our APIs, BDD Integration tests to test our API calls, and qb for creating our database tables and accessing our data. In addition, we will use PostMan to assist with development as well as ngrok to serve our APIs, allowing us to connect to each other.
+This workshop will walk us through creating a ColdBox REST API using the Ortus tools. We will use CommandBox to configure and host the API site using environment variables and cfconfig, the ColdBox RESTFul handler to return a standard payload, JWT authentication using cbSecurity to secure our calls, Swagger annotations to document our APIs, BDD Integration tests to test our API calls, and qb for creating our database tables and accessing our data. In addition, we will use PostMan to assist with development.
 
 The content is divided into the following sections.
 

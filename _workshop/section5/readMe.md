@@ -2,7 +2,7 @@
 
 When documenting your API, you just need to annotate the handler functions to describe what you are doing. We use Swagger to generate a JSON file that can be viewed with Swagger UI, or any other service that can parse the Swagger file.
 
-To start, confirm that you are able to generate a Swagger by going to
+To start, confirm that you are able to generate a Swagger file by going to
 
 > https://127.0.0.1:8001/cbswagger
 
@@ -10,15 +10,13 @@ or whatever the port is for your site. You should see a JSON file.
 
 Next, view Swagger UI by going to
 
-To start, confirm that you are able to generate a Swagger by going to
-
 > https://127.0.0.1:8001/cbswaggerUI
 
 or whatever the port is for your site. You should see the Swagger view and your APIs.
 
 ## Updating the API Documentation
 
-By default, we did not include any information description the API responses. Let's add that now.
+By default, we did not include any information describing the API responses. Let's add that now.
 
 First, we will add the response section to the handler functions. When done, your handler annotations should look like:
 
@@ -56,7 +54,7 @@ function second( event, rc, prc ) secured{
 
 By convention, the `reponse.json` files are stored in the `./resources/apidocs` path in the site.
 
-If you reinit the site and try pulling up /cbswagger, you will get an error since those reference files don't exist. We are now going to add them.
+If you reinit the site and try pulling up /cbswagger, you will get an error since those reference files do not exist. We are now going to add them.
 
 Create new directories for `first` and `second` in `./resources/apidocs/api/v1/echo` and add the supporting files.
 

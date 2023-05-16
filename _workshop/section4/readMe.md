@@ -12,11 +12,11 @@ Review the test results and compare them to the test files.
 
 ## Create New Integration Tests
 
-In the prior section, you created two new APIs in Echo.cfc. Let's now add tests for them.
+In the prior section, you created two new APIs in `Echo.cfc`. Let's now add tests for them.
 
 ### /api/v1/first
 
-Open EchoTests.cfc and add a new test section. It can look similar to this:
+Open `EchoTests.cfc` and add a new test section. It can look similar to this:
 
 ```bash
 story( "I want to view the results of my first API", function(){

@@ -1,8 +1,8 @@
 # Routes and Handlers
 
-The API has been created under the `modules_app\api\v1` directory.
+The API has been created under the `./modules_app/api/v1` directory.
 
-By default, this directory contains a config directory with `Router.cfc`, which will contain the API routes, and `Scheduler.cfc`, which can be used to create Scheduled Tasks for the module. We will not be using Scheduled Tasks with this workshop.
+By default, this directory contains a config directory with `Router.cfc`, which will contain the API routes, and `Scheduler.cfc`, which can be used to create Scheduled Tasks for the module. We will not be using Scheduled Tasks at the moment.
 
 ## Routes
 
@@ -25,7 +25,7 @@ get( "/whoami", "Echo.whoami" );
 
 ## Postman
 
-Postman is a handy tool for testing API calls. Import the Postman collection in the `_workshop` directory and try testing the APIs.
+Postman is a handy tool for testing API calls. Import the Postman collection in the `./_workshop` directory and try testing the APIs.
 
 After importing the collection, create a Local environment with the following two variables
 
@@ -36,7 +36,7 @@ For API_Server, set the initial and current value to the URL of your API. For ex
 
 The API_Token value will get populated when we authenticate.
 
-> Be sure to save the environment
+> Make sure you save the environment
 
 Go to the collection and select your new Local environment in the top right corner.
 
@@ -47,7 +47,7 @@ Click through the API calls and confirm the results.
 
 Add two new routes and functions to test.
 
-Edit Echo.cfc and add
+Edit `Echo.cfc` and add
 
 ```bash
 	/**
@@ -91,10 +91,9 @@ Reinitialize or restart the site since the routes were changed.
 
 You can try accessing the new routes in a browser:
 
-https://127.0.0.1:8001/api/v1/first
-https://127.0.0.1:8001/api/v1/second
+* https://127.0.0.1:8001/api/v1/first
+* https://127.0.0.1:8001/api/v1/second
 
 Or use Postman to test them.
-
 
 [Back](../readMe.md)

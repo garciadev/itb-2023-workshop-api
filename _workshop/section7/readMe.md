@@ -9,14 +9,14 @@ component {
 
 	property name="qb" inject="provider:queryBuilder@qb";
 
-	array function getFirstData(){
+	array function first(){
 		return qb
 			.from( "first" )
 			.orderBy( "letter", "DESC" )
 			.values( "letter" );
 	}
 
-	array function getSecondData(){
+	array function second(){
 		return qb
 			.from( "second" )
 			.orderBy( "letter", "DESC" )
@@ -30,7 +30,7 @@ After injecting qb at the top, we now have two simple functions that will query 
 
 > Note: we are sorting by letter descending to differentiate the hardcoded values currently in the handler.
 
-Next, open the Echo.cfc handler and add the following property injection at the top
+Next, open the `Echo.cfc` handler and add the following property injection at the top
 
 ```bash
 property name="myService" inject="MyService";
@@ -52,7 +52,7 @@ Finally, update the two new API functions to call the new model.
 	 */
 	function first( event, rc, prc ){
 		//var result = [ "a", "b", "c" ];
-		var result = myService.getFirstData();
+		var result = myService.first();
 		event.getResponse().setData( result );
 	}
 
@@ -68,7 +68,7 @@ Finally, update the two new API functions to call the new model.
 	 */
 	function second( event, rc, prc ) secured{
 		//var result = [ "d", "e", "f" ];
-		var result = myService.getSecondData();
+		var result = myService.second();
 		event.getResponse().setData( result );
 	}
 ```

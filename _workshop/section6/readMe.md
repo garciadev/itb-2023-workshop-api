@@ -4,7 +4,7 @@ When building APIs, it is easy to wire up a database to get data. When using CFM
 
 For this section, we are going to use CFMigrations to create our tables.
 
-First, lets make sure your `.env` file has a valid config for the database. If using MySQL, it should look similar to this, but with your own database info and credentials.
+First, lets make sure your `.env` file has a valid config for the database. If using MySQL, it should look similar to this, but with your own database information and credentials.
 
 ```bash
 # Database Information
@@ -101,5 +101,7 @@ When running `migrate up`, the two tables will be created and populated.
 To remove them, run `migrate down`.
 
 Check your database to see the results.
+
+Run `migrate up` again to recreate the tables before continuing.
 
 [Back](../readMe.md)
