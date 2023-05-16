@@ -21,7 +21,7 @@ install cbDebugger,cbSwagger,cbSwaggerUI,sqlformatter,cfmigrations,qb
 
 ## Environment Variables
 
-If you want to specify server settings, you can either edit the server.json file or set environment variables for CommandBox to use. Add this to the .env file specify the CF Engine, IP, and ports.
+If you want to specify server settings, you can either edit the server.json file or set environment variables for CommandBox to use. Add this to the `.env` file to specify the CF Engine, IP, and ports.
 
 ```bash
 # Server Settings
@@ -33,13 +33,13 @@ BOX_SERVER_WEB_SSL_PORT=8001
 BOX_SERVER_WEB_ACCESSLOGENABLE=true
 ```
 
-> If you want others to use similar settings, you can add that to the `.env.example` file so that others can use it as a guide for their environments.
+> If you want others to use similar settings, you can add that to the `.env.example` file so they can use it as a guide for their environments.
 
 You should also specify a JWT Secret to use when generating tokens. Specifying a value here will allow tokens to be validated after server restarts if using external storage like a database.
 
-An easy token generator is to use CommandBox to generate an UUID.
+An easy token generator to use is CommandBox to generate a UUID.
 
-Run this from CommandBox copy the value into the `.env` file: `repl createUUID()`
+Run this from CommandBox and copy the value into the `.env` file: `repl createUUID()`
 
 ```bash
 # JWT Information
