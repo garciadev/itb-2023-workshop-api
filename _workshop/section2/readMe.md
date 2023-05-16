@@ -21,7 +21,7 @@ install cbDebugger,cbSwagger,cbSwaggerUI,sqlformatter,cfmigrations,qb
 
 ## Environment Variables
 
-If you want to specify server settions, you can either edit the server.json file or set environment variables for CommandBox to use. Add this to the .env file specify the CF Engine, IP, and ports.
+If you want to specify server settings, you can either edit the server.json file or set environment variables for CommandBox to use. Add this to the .env file specify the CF Engine, IP, and ports.
 
 ```bash
 # Server Settings

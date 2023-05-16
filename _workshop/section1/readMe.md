@@ -20,13 +20,19 @@ Finally, add `C:\CommandBox` to your path so that anytime you call `box` from a 
 
 ## Additional Modules:
 
-Paste this into CommandBox to install the essential modules.
+First, install the CommandBox HTTP Command so that CommandBox can make HTTP calls.
+
+```bash
+install commandbox-http-command
+```
+
+Next, paste this into CommandBox to install the essential modules.
 
 ```bash
 http https://raw.githubusercontent.com/garciadev/itb-2023-workshop-api/main/essentials.boxr | recipe
 ```
 
-This is a recipe that will install several useful modules as well as setup some handy aliases. You can read more about recipes and more in the <a href="https://commandbox.ortusbooks.com/" target="_blank">CommandBox Documentation</a> site.
+This is a recipe that will install several useful modules as well as setup some handy aliases. You can read about recipes and more in the <a href="https://commandbox.ortusbooks.com/" target="_blank">CommandBox Documentation</a> site.
 
 
 [Back](../readMe.md)
