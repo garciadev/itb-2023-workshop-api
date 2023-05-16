@@ -3,6 +3,8 @@
  */
 component extends="coldbox.system.RestHandler" {
 
+	//property name="myService" inject="MyService";
+
 	// OPTIONAL HANDLER PROPERTIES
 	this.prehandler_only      = "";
 	this.prehandler_except    = "";
@@ -49,6 +51,7 @@ component extends="coldbox.system.RestHandler" {
 	 */
 	function first( event, rc, prc ){
 		var test = [ "a", "b", "c" ];
+		// var test = myService.getFirstData();
 		event.getResponse().setData( test );
 	}
 
@@ -64,6 +67,7 @@ component extends="coldbox.system.RestHandler" {
 	 */
 	function second( event, rc, prc ) secured{
 		var test = [ "d", "e", "f" ];
+		// var test = myService.getSecondData();
 		event.getResponse().setData( test );
 	}
 
