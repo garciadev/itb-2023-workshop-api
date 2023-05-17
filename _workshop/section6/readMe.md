@@ -104,4 +104,59 @@ Check your database to see the results.
 
 Run `migrate up` again to recreate the tables before continuing.
 
+## Microsoft SQL Server
+
+> The COldBox app wizard generates a configuration for MySQL. If you want to use MS SQL, here are example `.env` vars and `.cfconfig` you can use.
+
+MS SQL `.env` variables
+
+```bash
+# MS SQL
+DB_DATASOURCE_NAME=coldbox
+DB_SCHEMA=dbo
+DB_HOST=localhost
+DB_PORT=1433
+DB_DATABASE=coldbox
+DB_CLASS=com.microsoft.sqlserver.jdbc.SQLServerDriver
+DB_CUSTOM=DATABASENAME=coldbox&sendStringParametersAsUnicode=true&SelectMethod=direct
+DB_DRIVER=MSSQL
+DB_USER=test
+DB_PASSWORD=test
+DB_BUNDLENAME=mssqljdbc4
+DB_BUNDLEVERSION=4.0.2206.100
+DB_CONNECTION_STRING=jdbc:sqlserver://localhost:1433;DATABASENAME=coldbox;sendStringParametersAsUnicode=false;SelectMethod=direct
+```
+
+`.cfconfig` datasource using MS SQL environment variables
+
+```bash
+"${DB_DATASOURCE_NAME}": {
+	"allowAlter": true,
+	"allowCreate": true,
+	"allowDelete": true,
+	"allowDrop": true,
+	"allowGrant": true,
+	"allowInsert": true,
+	"allowRevoke": true,
+	"allowSelect": true,
+	"allowUpdate": true,
+	"blob": "false",
+	"class": "${DB_CLASS}",
+	"clob": "false",
+	"connectionTimeout": "1",
+	"custom": "${DB_CUSTOM}",
+	"database": "${DB_DATABASE}",
+	"dbdriver": "${DB_DRIVER}",
+	"dsn": "jdbc:sqlserver://{host}:{port}",
+	"host": "${DB_HOST}",
+	"metaCacheTimeout": "60000",
+	"password": "${DB_PASSWORD}",
+	"port": "${DB_PORT}",
+	"sendStringParametersAsUnicode": "false",
+	"storage": "false",
+	"username": "${DB_USER}",
+	"validate": "false"
+}
+```
+
 [Back](../readMe.md)
