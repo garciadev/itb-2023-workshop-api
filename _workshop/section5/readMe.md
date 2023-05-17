@@ -22,7 +22,7 @@ First, we will add the response section to the handler functions. When done, you
 
 ```bash
 /**
- * A unsecured route that shows you your information
+ * An unsecured route that shows you your information
  *
  * @x-route          (GET) /api/v1/first
  * @operationId      /api/v1/echo/first
