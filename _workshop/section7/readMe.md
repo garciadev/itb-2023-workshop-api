@@ -42,7 +42,7 @@ Finally, update the two new API functions to call the new model.
 
 ```bash
 	/**
-	 * A unsecured route that shows you your information
+	 * An unsecured route that shows you your information
 	 *
 	 * @x-route          (GET) /api/v1/first
 	 * @operationId      /api/v1/echo/first
