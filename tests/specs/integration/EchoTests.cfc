@@ -88,7 +88,7 @@ component extends="coldbox.system.testing.BaseTestCase" appMapping="/root" {
 			given( "invalid email and password", function(){
 				then( "I will receive a 401 exception ", function(){
 					getInstance( "provider:JwtService@cbsecurity" ).logout();
-					var event    = this.get( route = "/api/v1/whoami", params = {} );
+					var event    = this.get( route = "/api/v1/whoami", headers = {} );
 					var response = event.getPrivateValue( "Response" );
 					expect( response.getError() ).toBeTrue();
 					expect( response.getStatusCode() ).toBe( 401 );
@@ -99,7 +99,7 @@ component extends="coldbox.system.testing.BaseTestCase" appMapping="/root" {
 		story( "I want to view the results of my first API", function(){
 			given( "a valid call", function(){
 				then( "I will view the results", function(){
-					var event    = this.get( route = "/api/v1/first", params = {} );
+					var event    = this.get( route = "/api/v1/first", headers = {} );
 					var response = event.getPrivateValue( "Response" );
 					expect( response.getData() ).toBeArray();
 					expect( response.getData().len() ).toBeGT( 0 );
@@ -126,7 +126,7 @@ component extends="coldbox.system.testing.BaseTestCase" appMapping="/root" {
 			given( "invalid email and password", function(){
 				then( "I will receive a 401 exception ", function(){
 					getInstance( "provider:JwtService@cbsecurity" ).logout();
-					var event    = this.get( route = "/api/v1/second", params = {} );
+					var event    = this.get( route = "/api/v1/second", headers = {} );
 					var response = event.getPrivateValue( "Response" );
 					expect( response.getError() ).toBeTrue();
 					expect( response.getStatusCode() ).toBe( 401 );

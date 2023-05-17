@@ -22,7 +22,7 @@ Open `EchoTests.cfc` and add a new test section. It can look similar to this:
 story( "I want to view the results of my first API", function(){
 	given( "a valid call", function(){
 		then( "I will view the results", function(){
-			var event = this.get( route = "/api/v1/first", params = {} );
+			var event = this.get( route = "/api/v1/first", headers = {} );
 			var response = event.getPrivateValue( "Response" );
 			expect( response.getData() ).toBeArray();
 			expect( response.getData().len() ).toBeGT( 0 );
@@ -43,7 +43,7 @@ story( "I want to view the results of my second API", function(){
 			var jwtService = getInstance( "provider:JwtService@cbsecurity" );
 			var credentials = { "email" : "admin@coldbox.org", "password" : "admin" };
 			var token = jwtService.attempt( credentials.email, credentials.password );
-			var event = this.get( route = "/api/v1/second", params = { "x-auth-token" : token } );
+			var event = this.get( route = "/api/v1/second", headers = { "x-auth-token" : token } );
 
 			var response = event.getPrivateValue( "Response" );
 			expect( response.getData() ).toBeArray();
@@ -54,7 +54,7 @@ story( "I want to view the results of my second API", function(){
 	given( "invalid email and password", function(){
 		then( "I will receive a 401 exception ", function(){
 			getInstance( "provider:JwtService@cbsecurity" ).logout();
-			var event = this.get( route = "/api/v1/second", params = {} );
+			var event = this.get( route = "/api/v1/second", headers = {} );
 			var response = event.getPrivateValue( "Response" );
 			expect( response.getError() ).toBeTrue();
 			expect( response.getStatusCode() ).toBe( 401 );
