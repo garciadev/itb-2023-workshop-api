@@ -76,7 +76,7 @@ component extends="coldbox.system.testing.BaseTestCase" appMapping="/root" {
 					var jwtService  = getInstance( "provider:JwtService@cbsecurity" );
 					var credentials = { "email" : "admin@coldbox.org", "password" : "admin" };
 					var token       = jwtService.attempt( credentials.email, credentials.password );
-					var event       = this.get( route = "/api/v1/whoami", params = { "x-auth-token" : token } );
+					var event       = this.get( route = "/api/v1/whoami", headers = { "x-auth-token" : token } );
 
 					var response = event.getPrivateValue( "Response" );
 					expect( response.getError() ).toBeFalse( response.getMessages().toString() );
@@ -114,7 +114,7 @@ component extends="coldbox.system.testing.BaseTestCase" appMapping="/root" {
 					var jwtService  = getInstance( "provider:JwtService@cbsecurity" );
 					var credentials = { "email" : "admin@coldbox.org", "password" : "admin" };
 					var token       = jwtService.attempt( credentials.email, credentials.password );
-					var event       = this.get( route = "/api/v1/second", params = { "x-auth-token" : token } );
+					var event       = this.get( route = "/api/v1/second", headers = { "x-auth-token" : token } );
 
 					var response = event.getPrivateValue( "Response" );
 					expect( response.getData() ).toBeArray();
