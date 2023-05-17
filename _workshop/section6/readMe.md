@@ -124,7 +124,7 @@ DB_USER=test
 DB_PASSWORD=test
 DB_BUNDLENAME=mssqljdbc4
 DB_BUNDLEVERSION=4.0.2206.100
-DB_CONNECTION_STRING=jdbc:sqlserver://localhost:1433;DATABASENAME=coldbox;sendStringParametersAsUnicode=false;SelectMethod=direct
+DB_CONNECTIONSTRING=jdbc:sqlserver://localhost:1433;DATABASENAME=coldbox;sendStringParametersAsUnicode=false;SelectMethod=direct
 ```
 
 `.cfconfig` datasource using MS SQL environment variables
